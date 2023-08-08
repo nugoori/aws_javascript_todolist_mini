@@ -1,18 +1,18 @@
 * {
     box-sizing: border-box;
     font-size: 16px;
+    height: 100%;
 }
 
 .container {
     display: flex;
     /* justify-content: space-between; */
     position: relative;
-    margin: 120px auto;
-    border: 1px solid #dbdbdb;
-    border-radius: 4px;
+    margin: 0px auto;
+    padding-top: 120px;
     width: 600px;
-    height: 700px;
-    background-color: aqua;
+    height: 100%;
+    background-color: rgba(26, 23, 23, 0.925);
 }
 
 .logo-header {
@@ -29,6 +29,11 @@
 .main-container {
     display: flex;
     justify-content: center;
-    padding: 15px 8px 10px 8px ;
+    padding: 15px 0px 10px 0px ;
     width: 550px;
+    
+}
+
+.invisible {
+    display: none !important;
 }
