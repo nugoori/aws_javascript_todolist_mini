@@ -15,3 +15,14 @@
     //     sidebar.classList.add("invisible");
     // });
 
+const sidebarMenuOnclickHandler = (target) => {
+    switch(target.innerHTML) {
+        case "TodoList" :
+            Routes.getInstance().routeState = "todolist";
+            break;
+        case "Calender?" :
+            Routes.getInstance().routeState = "home";
+            break;
+    }
+    Routes.getInstance().show();
+}

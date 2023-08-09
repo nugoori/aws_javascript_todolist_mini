@@ -20,8 +20,9 @@ class Routes {
                 homePage.classList.remove("invisible");
                 break;
             case "todolist":
-                const todolistPage = document.querySelector(".todolist-page-main");
+                const todolistPage = document.querySelector(".todoList-page-container");
                 todolistPage.classList.remove("invisible");
+                TodolistService.getInstance().updateTodoList();
                 break;
         }
     }

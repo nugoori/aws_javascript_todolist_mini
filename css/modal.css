@@ -1,0 +1,44 @@
+.modal {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 200px;
+    left: 50px;
+    width: 500px;
+    height: 400px;
+}
+
+.modal-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 400px;
+    height: 300px;
+    background-color: aliceblue;
+}
+
+.modal-header {
+    margin-bottom: 30px;
+    width: 100%;
+    height: 20px;
+}
+
+.modal-title {
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+
+.modal-main {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-main input {
+    height: 20px;
+}
+
+.modal-btn {
+    width: 25px;
+    height: 15px;
+}

@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/sidebar.css">
     <link rel="stylesheet" href="css/homepage.css">
     <link rel="stylesheet" href="css/todoList.css">
+    <link rel="stylesheet" href="css/modal.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     
 
@@ -23,58 +24,59 @@
             </button>
             <aside class="side-bar">
                 <ul>
-                    <li>To do List</li>
-                    <li>Calender?</li>
+                    <li onclick="sidebarMenuOnclickHandler(this);">TodoList</li>
+                    <li onclick="sidebarMenuOnclickHandler(this);">Calender?</li>
                 </ul>
             </aside>
             <main class="main-container">
-                <div class="home-page-container invisible">
+                <div class="home-page-container ">
                     <h1>logo</h1>
-
                 </div>
-                <div class="todoList-page-container">
-                    <!-- <header class="todoList-page-header"> -->
 
-                    <!-- </header> -->
-                    <main class="todoList-page-main">
+                <div class="todoList-page-container invisible">
+                    <div class="todoList-page-main">
                         <header class="todoList-page-title">
                             <h2>My To Do List</h2>
                         </header>
                         <!-- <button class="todolist-write-button" onclick=""></button> -->
                         <div class="todolist-write-page">
-                            <input type="text" class="todolist-write-input">
+                            <input type="text" class="todolist-write-input text-input" 
+                                onkeyup="addTodoOnKeyUpHandler(event);" type="reset">
+                            
                             <ul class="todolist-write-page-list">
-                                <li>
-                                    <div class="todolist-checkbox">
-                                        <input type="checkbox">
-                                    </div>
-                                    <div class="todolist-content">
-                                        <pre>asdfa</pre>
-                                        
-                                    </div>
-                                    <div class="todolist-right">
-                                        <button class="todolist-modify-button td-right-btn"></button>
-                                        <button class="todolist-delete-button td-right-btn"></button>
-                                    </div>
-                                </li>
+                                
                             </ul>
                         </div>
-                    </main>
+                    </div>
                 </div>
             </main>
 
-            <div class="modal invisible">
-                <div class="modal container">
-
-                </div>
+             <div class="modal invisible">
+                <!-- <div class="modal-container">
+                    <header class="modal-header">
+                        <h1 class="modal-title">
+                            제목
+                        </h1>
+                    </header>
+                    <main class="modal-main">
+                        <p class="modal-message">
+                            메세지 내용
+                        </p>
+                        <input type="text" class="text-input">
+                    </main>
+                    <footer class="modal-footer">
+                        <button class="modal-btn"></button>
+                        <button class="modal-btn"></button>
+                    </footer>
+                </div> -->
             </div>
         </div>
     </div>
 
-
-
-
     <script src="js/sidebar.js"></script>
-    <script src=""></script>
+    <script src="js/routes.js"></script>
+    <script src="js/utills.js"></script>
+    <script src="js/todolist.js"></script>
+    <script src="js/modal.js"></script>
 </body>
 </html>

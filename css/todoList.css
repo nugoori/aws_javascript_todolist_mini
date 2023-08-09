@@ -71,11 +71,9 @@
     height: auto;
 }
 
-.todolist-write-page li {
+.todolist-write-page .todolist-items {
     display: flex;
     justify-content: space-between;
-    text-align: left;
-    margin-bottom: 0px;
     border-bottom: 1px solid;
     padding: 10px 10px;
     height: 45px;
@@ -94,6 +92,23 @@
     display: flex;
     justify-content: space-between;
     padding-top: 5px;
+    width: 310px;
+    font-size: 14px;
+}
+
+.todolist-content p {  
+    display: inline-flex;
+    position: absolute;
+    right: 150px;
+}
+
+.todolist-content pre {
+    flex-wrap: nowrap;
+}
+
+.todolist-date {
+    padding-top: 7px;
+    font-size: 11px;
 }
 
 .todolist-right {
@@ -102,12 +117,28 @@
     width: 80px;
 }
 
-.td-right-btn {
+.todolist-modify-icon {
+    display: flex;
+    justify-content: center;
+    width: 10px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.todolist-delete-icon {
+    display: flex;
+    justify-content: center;
+    width: 10px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.td-right-icon {
     width: 30px;
     height: 20px;
 }
 
-.td-right-btn:first-child {
+.td-right-icon:first-child {
     margin-right: 10px;
     
 }
