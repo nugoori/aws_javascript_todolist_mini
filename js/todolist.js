@@ -12,14 +12,18 @@ const checkedOnChangeHandler = (target) => {
 
 const modifyTodoOnClickHandler = (target) => {
     openModal();
-    console.log(target.value);
-    // undefined 찍힘
+    // undefined 찍힘 : div에는 value가 안들어감!!
     modifyModal(TodolistService.getInstance().getTodoById(target.value));
+}
+
+const deleteTodoOnclickHandler = (target) => {
+    openModal();
+    deleteModal(TodolistService.getInstance().getTodoById(target.value));
+    // removeTodo(TodolistService.getInstance().getTodoById(target.value));
 }
 
 const generateTodoObj = () => {
     const todoContent = document.querySelector(".todolist-write-page .todolist-write-input").value;
-    // console.log(todoContent); 잘 들어갔고
     const todoObj = {
         id: 0,
         todoContent: todoContent,
@@ -58,8 +62,16 @@ class TodolistService {
     }
 
     getTodoById(id) {
-        console.log(this.todoList.filter(todo => todo.id === parseInt(id))[0]);
+        // 위에 target.value에서 unidentified id = undefined
         return this.todoList.filter(todo => todo.id === parseInt(id))[0];
+    }
+
+    getTodoByDate(createDate) {
+        const findByCreateDateTodoList = new Array();
+        for(let i = 0; i < this.todoList.length; i++)  {
+            findByCreateDateTodoList = todoList.filter(todo => todo.createDate === parseInt(createDate))[i];
+        };
+        return findByCreateDateTodoList;
     }
 
     addTodo(todoObj) {
@@ -98,9 +110,14 @@ class TodolistService {
         this.saveLocalStorage();
     }
 
-    removeTodo(id) {
-        
-    }
+    // removeTodo(id) {
+    //     this.todoList = this.todoList.filter((todo) => {
+    //         return todo.id !== parseInt(id);
+    //     });
+
+    //     this.saveLocalStorage();
+    //     this.updateTodoList();
+    // }
 
     updateTodoList() {
         const todoListWritePage = document.querySelector(".todolist-write-page-list");
@@ -122,12 +139,12 @@ class TodolistService {
                         <p>${todo.createDate}</p>
                     </div>
                     <div class="todolist-right">
-                        <div class="todolist-modify-icon td-right-icon" value="${todo.id}" onclick="modifyTodoOnClickHandler(this);">
-                            <i class="fa-solid fa-feather"></i> 
-                        </div>
-                        <div class="todolist-delete-icon td-right-icon" value="${todo.id}" onclick="">
+                        <button class="todolist-modify-button td-right-button" value="${todo.id}" onclick="modifyTodoOnClickHandler(this);">
+                            <i class="fa-solid fa-feather" ></i> 
+                        </button>
+                        <button class="todolist-delete-icon td-right-button" value="${todo.id}" onclick="deleteTodoOnclickHandler(this);">
                             <i class="fa-regular fa-trash-can"></i>
-                        </div>
+                        </button>
                     </div>
                 </li>
             `;

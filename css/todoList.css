@@ -25,7 +25,7 @@
 .todoList-page-main {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     text-align: center;
     padding: 15px 10px;
     border: 3px solid #ffffff;
@@ -55,8 +55,22 @@
 .todolist-write-page {
     border: 1px solid #ffffff;
     border-radius: 2px;
+    height: auto;
+    overflow-y: scroll;
 }
 
+.todolist-write-page-list {
+    padding: 0px;
+}
+
+.todolist-write-page-list::-webkit-scrollbar {
+    width: 2px;
+}
+
+.todolist-write-page-list::-webkit-scrollbar-thumb {
+    background-color: #dbdbdb;
+    border-radius: 3px;
+}
 .todolist-write-input {
     margin-top: 5px;
     padding-left: 10px;
@@ -64,11 +78,6 @@
     height: 45px;
     outline: none;
     color: rgba(26, 23, 23, 0.925);
-}
-
-.todolist-write-page ul {
-    padding: 0px 10px;
-    height: auto;
 }
 
 .todolist-write-page .todolist-items {
@@ -117,7 +126,7 @@
     width: 80px;
 }
 
-.todolist-modify-icon {
+.todolist-modify-button {
     display: flex;
     justify-content: center;
     width: 10px;
@@ -133,12 +142,13 @@
     cursor: pointer;
 }
 
-.td-right-icon {
+.td-right-button {
+    border: none;
     width: 30px;
     height: 20px;
 }
 
-.td-right-icon:first-child {
-    margin-right: 10px;
-    
+.td-right-button:first-child {
+    margin-left: 7px;
+    margin-right: 13px;
 }

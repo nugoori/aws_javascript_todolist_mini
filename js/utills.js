@@ -13,6 +13,4 @@ class DateUtills {
 
         return [year, month, day].join("-");
     }
-
-
 }
